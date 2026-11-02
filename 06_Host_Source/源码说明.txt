@@ -1,0 +1,9 @@
+SwingLab4.exe是独立Windows上位机，不需Python/Qt。
+swing_lab.py：LAB4预设、无效旧参数置灰、现场零位回读、保存日志。
+lab_protocol.py：flags129、模式相关字段单位、CRC和原子配置确认。
+lab_serial.py：原生双向Windows串口。
+test_lab4_integration.py：实际FPGA仿真UART的零位/标定/起摆/接管/行程检查。
+test_lab_integration.py：历史UART兼容回归。
+test_lab_ui.py：模拟板回读、参数拒绝、复位不重放和日志类型。
+build_lab_exe.ps1：构建SwingLab4.exe，构建需Python/Tk/PyInstaller。
+--verify 路径.json是隐藏模拟板GUI检查，不操作真实电机，不是实物控制验证。

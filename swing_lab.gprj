@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2A-55C" pn="GW2A-LV55PG484C8/I7">gw2a55c-005</Device>
+    <FileList>
+        <File path="src/lab_zero_calibrator.v" type="file.verilog" enable="1"/>
+        <File path="src/swing_reference_bridge.v" type="file.verilog" enable="1"/>
+        <File path="src/c_sensor.v" type="file.verilog" enable="1"/>
+        <File path="src/c_swing.v" type="file.verilog" enable="1"/>
+        <File path="src/c_output.v" type="file.verilog" enable="1"/>
+        <File path="src/v5_params.vh" type="file.verilog" enable="1"/>
+        <File path="src/swing_precapture.v" type="file.verilog" enable="1"/>
+        <File path="src/swing_velocity_relay.v" type="file.verilog" enable="1"/>
+        <File path="src/swing_energy_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/swing_lab_top.v" type="file.verilog" enable="1"/>
+        <File path="src/lab_uart_rx.v" type="file.verilog" enable="1"/>
+        <File path="src/lab_config.v" type="file.verilog" enable="1"/>
+        <File path="src/lab_telemetry.v" type="file.verilog" enable="1"/>
+        <File path="src/swing_lab_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/pendulum_v6_top.v" type="file.verilog" enable="1"/>
+        <File path="src/swing_up_supervisor.v" type="file.verilog" enable="1"/>
+        <File path="src/impulse_swing_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/swing_trajectory_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/adc_capture.v" type="file.verilog" enable="1"/>
+        <File path="src/quadrature_counter.v" type="file.verilog" enable="1"/>
+        <File path="src/key_debounce.v" type="file.verilog" enable="1"/>
+        <File path="src/balance_pd_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/position_pid_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/balance_pwm_limiter.v" type="file.verilog" enable="1"/>
+        <File path="src/motor_signed_pwm.v" type="file.verilog" enable="1"/>
+        <File path="src/uart_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/telemetry_v1.v" type="file.verilog" enable="1"/>
+        <File path="src/pins.cst" type="file.cst" enable="1"/>
+        <File path="src/timing.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

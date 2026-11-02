@@ -1,0 +1,73 @@
+// M3 controlled phase comparison: motor tracker15Hz unchanged,
+// pendulum tracker25->40Hz, pendulum speed KQ3 365->292.
+// Retain M2 KQ0..2, KU=0, both integrals, output and protections.
+// These tracker design frequencies are not measured mechanical modes.
+localparam signed [31:0] AD_00 = 32'sd1048576;
+localparam signed [31:0] AD_01 = 32'sd1049;
+localparam signed [31:0] AD_02 = 32'sd0;
+localparam signed [31:0] AD_03 = 32'sd0;
+localparam signed [31:0] AD_10 = 32'sd0;
+localparam signed [31:0] AD_11 = 32'sd1048576;
+localparam signed [31:0] AD_12 = 32'sd0;
+localparam signed [31:0] AD_13 = 32'sd0;
+localparam signed [31:0] AD_20 = 32'sd0;
+localparam signed [31:0] AD_21 = 32'sd0;
+localparam signed [31:0] AD_22 = 32'sd1048576;
+localparam signed [31:0] AD_23 = 32'sd1049;
+localparam signed [31:0] AD_30 = 32'sd0;
+localparam signed [31:0] AD_31 = 32'sd0;
+localparam signed [31:0] AD_32 = 32'sd0;
+localparam signed [31:0] AD_33 = 32'sd1048576;
+localparam signed [31:0] BD_0 = 32'sd0;
+localparam signed [31:0] BD_1 = 32'sd0;
+localparam signed [31:0] BD_2 = 32'sd0;
+localparam signed [31:0] BD_3 = 32'sd0;
+localparam signed [31:0] LB_00 = 32'sd233027;
+localparam signed [31:0] LB_01 = 32'sd0;
+localparam signed [31:0] LB_10 = 32'sd14616401;
+localparam signed [31:0] LB_11 = 32'sd0;
+localparam signed [31:0] LB_20 = 32'sd0;
+localparam signed [31:0] LB_21 = 32'sd414269;
+localparam signed [31:0] LB_30 = 32'sd0;
+localparam signed [31:0] LB_31 = 32'sd51786237;
+localparam signed [31:0] KQ_0 = 32'sd538;
+localparam signed [31:0] KQ_1 = 32'sd315;
+localparam signed [31:0] KQ_2 = 32'sd4690;
+localparam signed [31:0] KQ_3 = 32'sd450;
+localparam signed [31:0] KU_PREV = 32'sd0;
+localparam signed [31:0] P_WINDOW = 32'sd8;
+localparam signed [31:0] P_VEL_CLIP = 32'sd2293760;
+localparam signed [31:0] P_FILT_BETA = 32'sd9830;
+localparam signed [31:0] P_E_NUM_BASE = 32'sd12858163;
+localparam signed [31:0] P_E_MARGIN_PCT = 32'sd8;
+localparam signed [31:0] P_CAP_ANGLE = 32'sd22938;   // 20 deg
+localparam signed [31:0] P_CAP_SPEED = 32'sd196608;   // 3.0 rad/s first-capture limit
+localparam signed [31:0] P_CAP_CONFIRM = 32'sd3;
+localparam signed [31:0] P_FALL_ANGLE = 32'sd68634;
+localparam signed [31:0] P_SWING_PATIENCE_MS = 32'sd25000;
+localparam signed [31:0] P_STABLE_MS = 32'sd3000;
+localparam signed [31:0] P_COMP_EPS = 32'sd50;
+localparam signed [31:0] P_COMP_D = 32'sd0;
+localparam signed [31:0] P_RATE_LIMIT = 32'sd100;
+localparam signed [31:0] P_BAL_RATE_LIMIT = 32'sd60;
+localparam signed [31:0] P_VMAX = 32'sd786432;
+localparam signed [31:0] P_I_LIMIT = 32'sd0;    // no-integral MB1 baseline
+localparam signed [31:0] P_I_WINDOW = 32'sd11438;
+localparam signed [31:0] P_OBS_ERR_RESET = 32'sd81920;
+localparam signed [31:0] P_OBS_ERR_MS = 32'sd5;
+localparam signed [31:0] P_MODE_TARGET_0 = 32'sd0;
+localparam signed [31:0] P_MODE_TARGET_1 = 32'sd51472;
+localparam signed [31:0] P_MODE_TARGET_2 = -32'sd51472;
+localparam signed [31:0] P_MODE_TARGET_3 = 32'sd102944;
+localparam signed [31:0] P_MODE_TARGET_4 = -32'sd102944;
+localparam signed [31:0] P_SINE_AMP = 32'sd51472;
+localparam signed [31:0] P_SINE_PHASE_INC = 32'sd1678;
+localparam signed [31:0] P_SINE_AMP_INC = 32'sd16;
+localparam signed [31:0] P_REF_SLEW = 32'sd12;   // ~10 deg/s, gated
+localparam signed [31:0] P_POS_I_K = 32'sd0;   // no-integral MB1 baseline
+localparam signed [31:0] P_POS_I_LIMIT = 32'sd955000000;
+localparam signed [31:0] P_E_NUM = 32'sd13886816;
+
+
+localparam signed [31:0] P_DUTY_CAP = 32'sd500;
+localparam signed [31:0] P_CMD_MAX = 32'sd393216; // 6.0 V = 500 permille

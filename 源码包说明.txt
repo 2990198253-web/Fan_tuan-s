@@ -1,0 +1,8 @@
+J280 旋转倒立摆 R14 源码包（2026-11-02）
+
+FPGA 工程：swing_lab.gprj；顶层 swing_lab_top。
+板端源码和引脚约束：src/。
+上位机 Python 源码：06_Host_Source/swing_lab.py、lab_protocol.py、lab_serial.py。
+仿真测试：05_Simulation/；接线说明：02_Pins_Wiring/。
+在高云 FPGA Designer 中打开 swing_lab.gprj；批处理构建参考 build.tcl。
+此包只收录源码、工程配置和测试输入，不含历史日志、构建缓存和可执行文件。

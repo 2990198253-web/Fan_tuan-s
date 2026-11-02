@@ -1,0 +1,33 @@
+信号                    FPGA球位   电平      用途
+clk_50m                 M19        3.3V      板载50MHz
+rst_n                   AB3        3.3V      按键5复位，低有效
+key_sw[0]               T18        1.5V      按键1，启动试验（按配置可接平衡）
+key_sw[1]               R18        1.5V      按键2，停止
+key_sw[2]               U20        1.5V      按键3，LAB4停机时扶直静止标定零位
+key_sw[3]               T20        1.5V      按键4，急停（需SSPI设GPIO）
+uart_tx                 K20        3.3V      串口TX，115200 8N1
+uart_rx                 L20        3.3V      串口RX，接电脑TX，在线配置/心跳
+adc_clk                 G18        3.3V      ADC时钟
+adc_oe_n                H20        3.3V      ADC输出使能，低有效
+adc_data_in[9]          E19        3.3V      ADC D9
+adc_data_in[8]          G17        3.3V      ADC D8
+adc_data_in[7]          G19        3.3V      ADC D7
+adc_data_in[6]          H19        3.3V      ADC D6
+adc_data_in[5]          H18        3.3V      ADC D5
+adc_data_in[4]          D19        3.3V      ADC D4
+adc_data_in[3]          J19        3.3V      ADC D3
+adc_data_in[2]          J20        3.3V      ADC D2
+adc_data_in[1]          M21        3.3V      ADC D1
+adc_data_in[0]          L21        3.3V      ADC D0
+enc1_a                  Y20        3.3V      实体接口一编码器A
+enc1_b                  AA20       3.3V      实体接口一编码器B
+enc2_a                  W18        3.3V      实体接口二编码器A
+enc2_b                  W17        3.3V      实体接口二编码器B
+AN1                     Y17        3.3V      A通道/实体接口二方向1
+AN2                     Y19        3.3V      A通道/实体接口二方向2
+PWMA                    Y18        3.3V      A通道/实体接口二PWM
+BN1                     AA17       3.3V      B通道/实体接口一方向1（默认使用）
+BN2                     V15        3.3V      B通道/实体接口一方向2（默认使用）
+PWMB                    V14        3.3V      B通道/实体接口一PWM（默认使用）
+
+这是FPGA封装球位表，不是外部连接器顺序表；实际接线按原板接口丝印。
