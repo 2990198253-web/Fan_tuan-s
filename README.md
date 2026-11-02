@@ -1,6 +1,5 @@
 # J280 LAB4 R1 本地工程
 
-这是从 `gowin_swing_lab4_R1.zip` 迁入的独立工程。高云工程直接打开根目录的 `swing_lab.gprj`，实际顶层是 `swing_lab_top`。原来的 `Interface_test.gprj`、旧 RTL、旧调参软件和旧位流已移出本目录。
 
 ## 本地适配
 
